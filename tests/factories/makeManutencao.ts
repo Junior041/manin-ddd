@@ -7,7 +7,7 @@ export function makeManutencao(
 ) {
 	const manutencao = Manutencao.create(
 		{
-			compontentId: override.compontentId ?? new UniqueEntityID(),
+			componenteId: override.componenteId ?? new UniqueEntityID(),
 			dataManutencao: override.dataManutencao ?? new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()),
 			dataRealizacao: override.dataRealizacao ?? null,
 			lojaId: override.lojaId ?? new UniqueEntityID(),

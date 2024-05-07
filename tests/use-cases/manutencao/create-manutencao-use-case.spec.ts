@@ -31,7 +31,7 @@ describe('MANUTENCAO - crete', async () => {
 		inMemoryUsuarioRepository.items.push(usuario);
 
 		const result = await sut.execute({
-			compontentId: componente.id.toString(),
+			componenteId: componente.id.toString(),
 			dataManutencao: new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate()),
 			lojaId: loja.id.toString(),
 			tipoManutencao: 'PREVENTIVA',

@@ -8,7 +8,7 @@ import { UsuarioRepository } from '../../repositories/usuario-repository';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 
 interface CreateManutencaoUseCaseRequest {
-    compontentId: string;
+    componenteId: string;
     lojaId: string;
     urgencia: 1 | 2 | 3;
     dataManutencao: Date;
@@ -30,10 +30,10 @@ export class CreateManutencaoUseCase {
         private readonly usuarioRepository: UsuarioRepository,
 	) {}
 
-	async execute({compontentId,dataManutencao,lojaId,tipoManutencao,urgencia,dataRealizacao,realizadaPor}: CreateManutencaoUseCaseRequest): Promise<CreateManutencaoUseCaseResponse> {
+	async execute({componenteId,dataManutencao,lojaId,tipoManutencao,urgencia,dataRealizacao,realizadaPor}: CreateManutencaoUseCaseRequest): Promise<CreateManutencaoUseCaseResponse> {
 		const [lojaAlreadyExists, componenteAlreadyExists] = await Promise.all([
 			this.lojaRepository.findById(lojaId),
-			this.componenteRepository.findById(compontentId),
+			this.componenteRepository.findById(componenteId),
 		]);
 		if (!lojaAlreadyExists || !componenteAlreadyExists) {
 			return left(new ResourceNotFoundError());
@@ -45,7 +45,7 @@ export class CreateManutencaoUseCase {
 			}
 		}
 		const manutencao = Manutencao.create({
-			compontentId: new UniqueEntityID(compontentId),
+			componenteId: new UniqueEntityID(componenteId),
 			dataManutencao,
 			lojaId: new UniqueEntityID(lojaId),
 			tipoManutencao,

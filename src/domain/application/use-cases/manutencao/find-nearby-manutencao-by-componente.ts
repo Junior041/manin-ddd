@@ -4,7 +4,7 @@ import { ManutencaoRepository } from '../../repositories/manutencao-repository';
 import { PaginationParams } from '@/core/repositories/pagination-params';
 
 interface FindNearbyManutencaoByComponenteUseCaseRequest {
-    compontentId: string;
+    componenteId: string;
     params: PaginationParams
 }
 type FindNearbyManutencaoByComponenteUseCaseResponse = Either<null, 
@@ -18,8 +18,8 @@ export class FindNearbyManutencaoByComponenteUseCase {
         private readonly manutencaoRepository: ManutencaoRepository,
 	) {}
 
-	async execute({compontentId, params}: FindNearbyManutencaoByComponenteUseCaseRequest): Promise<FindNearbyManutencaoByComponenteUseCaseResponse> {
-		const manutencoes = await this.manutencaoRepository.findNearbyBycomponenteId(compontentId, params);
+	async execute({componenteId, params}: FindNearbyManutencaoByComponenteUseCaseRequest): Promise<FindNearbyManutencaoByComponenteUseCaseResponse> {
+		const manutencoes = await this.manutencaoRepository.findNearbyBycomponenteId(componenteId, params);
 		return right({manutencoes});
 	}
 

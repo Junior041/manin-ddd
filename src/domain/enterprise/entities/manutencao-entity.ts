@@ -3,7 +3,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Optional } from '@/core/types/optional';
 
 export interface ManutencaoProps {
-  compontentId: UniqueEntityID;
+  componenteId: UniqueEntityID;
   lojaId: UniqueEntityID;
   urgencia: 1 | 2 | 3;
   dataManutencao: Date;
@@ -15,8 +15,8 @@ export interface ManutencaoProps {
 
 export class Manutencao extends Entity<ManutencaoProps> {
 
-	get compontentId(){
-		return this.props.compontentId;
+	get componenteId(){
+		return this.props.componenteId;
 	}
 	get lojaId(){
 		return this.props.lojaId;

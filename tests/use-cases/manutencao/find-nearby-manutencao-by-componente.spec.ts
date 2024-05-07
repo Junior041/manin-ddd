@@ -17,26 +17,26 @@ describe('MANUTENCAO - find nearby', async () => {
 	it('Deve bsucar as proximas manutenções a serem feitas', async () => {
 		const manutencao1 = makeManutencao({
 			dataManutencao: new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate() + 1),
-			compontentId: new UniqueEntityID('1')
+			componenteId: new UniqueEntityID('1')
 		});
 		const manutencao2 = makeManutencao({
 			dataManutencao: new Date(new Date().getFullYear(), new Date().getMonth() - 1, new Date().getDate() + 1),
-			compontentId: new UniqueEntityID('1')
+			componenteId: new UniqueEntityID('1')
 		});
 		const manutencao3 = makeManutencao({
 			dataManutencao: new Date(new Date().getFullYear(), new Date().getMonth() + 3, new Date().getDate() + 1),
-			compontentId: new UniqueEntityID('1')
+			componenteId: new UniqueEntityID('1')
 		});
 		const manutencao4 = makeManutencao({
 			dataManutencao: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1),
-			compontentId: new UniqueEntityID('1')
+			componenteId: new UniqueEntityID('1')
 		});
 		inMemoryManutencaoRepository.items.push(manutencao1);
 		inMemoryManutencaoRepository.items.push(manutencao2);
 		inMemoryManutencaoRepository.items.push(manutencao3);
 		inMemoryManutencaoRepository.items.push(manutencao4);
 
-		const result = await sut.execute({ compontentId: manutencao1.compontentId.toString(), params: { page: 1 } });
+		const result = await sut.execute({ componenteId: manutencao1.componenteId.toString(), params: { page: 1 } });
 
 		expect(result.isRight()).toBeTruthy();
 		expect(result.value?.manutencoes.length).toBe(3);
