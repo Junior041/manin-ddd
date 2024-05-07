@@ -1,5 +1,5 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { FindByRealizadaPorUseCase } from '@/domain/application/use-cases/manutencao/find-by-realizada-por-use-case';
+import { FindManutencaoByRealizadaPorUseCase } from '@/domain/application/use-cases/manutencao/find-by-realizada-por-use-case';
 import { makeManutencao } from 'tests/factories/makeManutencao';
 import { makeUsuario } from 'tests/factories/makeUsuario';
 import { InMemoryComponenteRepository } from 'tests/repositories/in-memory-componente-repository';
@@ -10,12 +10,12 @@ describe('MANUTENCAO - buscar por realizador', async () => {
 	let inMemoryComponenteRepository: InMemoryComponenteRepository;
 	let inMemoryManutencaoRepository: InMemoryManutencaoRepository;
 	let inMemoryUsuariorepository: InMemoryUsuarioRepository;
-	let sut: FindByRealizadaPorUseCase;
+	let sut: FindManutencaoByRealizadaPorUseCase;
 	beforeEach(() => {
 		inMemoryComponenteRepository = new InMemoryComponenteRepository();
 		inMemoryManutencaoRepository = new InMemoryManutencaoRepository(inMemoryComponenteRepository);
 		inMemoryUsuariorepository = new InMemoryUsuarioRepository();
-		sut = new FindByRealizadaPorUseCase(inMemoryManutencaoRepository);
+		sut = new FindManutencaoByRealizadaPorUseCase(inMemoryManutencaoRepository);
 	});
 
 	it('Deve bsucar as manutenções realizadas por um usuario', async () => {

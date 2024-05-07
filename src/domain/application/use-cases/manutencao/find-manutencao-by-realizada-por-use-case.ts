@@ -1,26 +1,26 @@
-//findByRealizadaPorUseCase
+//FindManutencaoByRealizadaPorUseCase
 
 import { Either, right } from '@/core/either';
 import { Manutencao } from '@/domain/enterprise/entities/manutencao-entity';
 import { ManutencaoRepository } from '../../repositories/manutencao-repository';
 import { PaginationParams } from '@/core/repositories/pagination-params';
 
-interface FindByRealizadaPorUseCaseRequest {
+interface FindManutencaoByRealizadaPorUseCaseRequest {
     realizadoPor: string;
     params: PaginationParams
 }
-type FindByRealizadaPorUseCaseResponse = Either<null, 
+type FindManutencaoByRealizadaPorUseCaseResponse = Either<null, 
 {
     manutencoes: Manutencao[]
 }>
 
-export class FindByRealizadaPorUseCase {
+export class FindManutencaoByRealizadaPorUseCase {
 
 	constructor(
         private readonly manutencaoRepository: ManutencaoRepository,
 	) {}
 
-	async execute({realizadoPor, params}: FindByRealizadaPorUseCaseRequest): Promise<FindByRealizadaPorUseCaseResponse> {
+	async execute({realizadoPor, params}: FindManutencaoByRealizadaPorUseCaseRequest): Promise<FindManutencaoByRealizadaPorUseCaseResponse> {
 		const manutencoes = await this.manutencaoRepository.findByRealizadaPor(realizadoPor, params);
 		return right({manutencoes});
 	}
