@@ -23,13 +23,21 @@ export class InMemoryManutencaoRepository extends ManutencaoRepository{
 			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
 		return manutencoes;
 	}
-	async findByLojaIdInAtualMonthNotExecuted(lojaId: string, {page}: PaginationParams): Promise<Manutencao[]> {
-		const manutencoes = this.items.filter((item) => 
+	async findByLojaIdInAtualMonthNotExecuted(lojaId: string, { page }: PaginationParams): Promise<Manutencao[]> {
+		const currentDate = new Date();
+		const currentMonth = currentDate.getMonth();
+		const currentYear = currentDate.getFullYear();
+	
+		const manutencoes = this.items.filter((item) =>
 			item.lojaId.toString() === lojaId &&
-			item.dataManutencao.getMonth() === new Date().getMonth()  || 
-			(item.lojaId.toString() === lojaId && (item.dataRealizacao === null || item.dataManutencao.getMonth() <= new Date().getMonth()))
+			(
+				(item.dataManutencao.getMonth() === currentMonth && item.dataManutencao.getFullYear() === currentYear) ||
+				(item.dataRealizacao === null && item.dataManutencao.getMonth() === currentMonth && item.dataManutencao.getFullYear() === currentYear) || (item.dataRealizacao === null && item.dataManutencao < currentDate)
+			)
 		)
-			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
+			.slice((page - 1) * 20, page * 20)
+			.sort((a, b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
+	
 		return manutencoes;
 	}
 	async findBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
