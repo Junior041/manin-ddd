@@ -43,4 +43,6 @@ S
 - [X] Busca de Próximas Manutencao por ID da Máquina
 - [X] Definir Manutencao como Executada
 - [X] Busca de Manutencao por ID da Máquina Executada
-- [X] Busca de Manutencao por Realizada Por
+- [X] Busca de Manutencao por RealizadaPor
+- [X] Busca de Manutencao por loja Id
+- [ ] Busca de Manutenções por loja Id que estao planejadas no mes

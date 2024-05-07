@@ -18,6 +18,20 @@ export class InMemoryManutencaoRepository extends ManutencaoRepository{
 		const manutencao = this.items.find((item) => item.id.toString() === id);
 		return manutencao || null;
 	}
+	async findByLojaId(lojaId: string, {page}: PaginationParams): Promise<Manutencao[]> {
+		const manutencoes = this.items.filter((item) => item.lojaId.toString() === lojaId)
+			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
+		return manutencoes;
+	}
+	async findByLojaIdInAtualMonthNotExecuted(lojaId: string, {page}: PaginationParams): Promise<Manutencao[]> {
+		const manutencoes = this.items.filter((item) => 
+			item.lojaId.toString() === lojaId &&
+			item.dataManutencao.getMonth() === new Date().getMonth()  || 
+			(item.lojaId.toString() === lojaId && (item.dataRealizacao === null || item.dataManutencao.getMonth() <= new Date().getMonth()))
+		)
+			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
+		return manutencoes;
+	}
 	async findBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
 		const manutencoes = this.items.filter((item) => item.componenteId.toString() === componenteId)
 			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
