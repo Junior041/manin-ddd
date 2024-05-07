@@ -1,9 +1,10 @@
 import { Entity } from '@/core/entities/entity';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Optional } from '@/core/types/optional';
+import { Maquina } from './maquina.entity';
 
 export interface ComponenteProps {
-    maquinaId: UniqueEntityID
+    maquina: Maquina
 	nome: string;
     descricao: string;
     valorUnitario: 'UNIDADE'|'LITROS'|'METROS';
@@ -14,8 +15,8 @@ export interface ComponenteProps {
 
 export class Componente extends Entity<ComponenteProps> {
 
-	get maquinaId(){
-		return this.props.maquinaId;
+	get maquina(){
+		return this.props.maquina;
 	}
 	get nome(){
 		return this.props.nome;

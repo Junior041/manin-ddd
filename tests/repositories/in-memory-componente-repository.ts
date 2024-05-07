@@ -9,12 +9,12 @@ export class InMemoryComponenteRepository extends ComponenteRepository {
 	}
 
 	async findByMaquinaId(maquinaId: string, { page }: PaginationParams): Promise<Componente[]> {
-		const componente = this.items.filter((item) => item.maquinaId.toString() == maquinaId).slice((page - 1) * 20, page * 20);
+		const componente = this.items.filter((item) => item.maquina.id.toString() == maquinaId).slice((page - 1) * 20, page * 20);
 		return componente;
 	}
 
 	async findAllByMaquinaId(maquinaId: string): Promise<Componente[]> {
-		const componente = this.items.filter((item) => item.maquinaId.toString() == maquinaId);
+		const componente = this.items.filter((item) => item.maquina.id.toString() == maquinaId);
 		return componente;
 	}
 

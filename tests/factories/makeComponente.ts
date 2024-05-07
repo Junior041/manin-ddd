@@ -1,6 +1,7 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Componente, ComponenteProps } from '@/domain/enterprise/entities/componente.entity';
 import { faker } from '@faker-js/faker';
+import { makeMaquina } from './makeMaquina';
 
 export function makeComponente(
 	override: Partial<ComponenteProps> = {},
@@ -8,7 +9,7 @@ export function makeComponente(
 ) {	
 	const componente = Componente.create(
 		{
-			maquinaId: override.maquinaId || new UniqueEntityID(),
+			maquina: override.maquina || makeMaquina(),
 			nome: override.nome || faker.lorem.word(),
 			descricao: override.descricao || faker.lorem.sentence(),
 			valorUnitario: override.valorUnitario || 'UNIDADE',

@@ -17,7 +17,7 @@ describe('MANUTENCAO - buscar as proximas manutencoes por maquina', async () => 
 
 	it('Deve buscar as proximas manutenções por maquina', async () => {
 		const maquina = makeMaquina();
-		const componente = makeComponente({ maquinaId: maquina.id });
+		const componente = makeComponente({ maquina: maquina });
 		inMemoryComponenteRepository.items.push(componente);
 		const manutencao1 = makeManutencao({
 			componenteId: componente.id,
