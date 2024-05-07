@@ -33,7 +33,7 @@
 - [X] Criação de Componente
 - [X] Obtenção de Componentes por Loja
 - [X] Atualização de Componente
-
+S
 ## Manutencao
 - [x] Criação de Manutencao
 - [ ] Busca de Manutencao por ID
@@ -42,5 +42,5 @@
 - [X] Busca de Manutencao por ID do Componente em um Período
 - [X] Busca de Próximas Manutencao por ID da Máquina
 - [X] Definir Manutencao como Executada
-- [ ] Busca de Manutencao por ID da Máquina Executada
+- [X] Busca de Manutencao por ID da Máquina Executada
 - [X] Busca de Manutencao por Realizada Por
