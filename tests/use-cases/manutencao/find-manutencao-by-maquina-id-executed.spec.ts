@@ -1,4 +1,4 @@
-import { FindManutencaoByMaquinaExecutedUseCase } from '@/domain/application/use-cases/manutencao/find-manutencao-by-maquina-id-executed';
+import { FindManutencaoByMaquinaExecutedUseCase } from '@/domain/application/use-cases/manutencao/find-manutencao-by-maquina-id-executed-use-case';
 import { makeComponente } from 'tests/factories/makeComponente';
 import { makeManutencao } from 'tests/factories/makeManutencao';
 import { makeMaquina } from 'tests/factories/makeMaquina';
