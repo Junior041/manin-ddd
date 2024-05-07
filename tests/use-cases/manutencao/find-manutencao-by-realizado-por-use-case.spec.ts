@@ -1,5 +1,5 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { FindManutencaoByRealizadaPorUseCase } from '@/domain/application/use-cases/manutencao/find-by-realizada-por-use-case';
+import { FindManutencaoByRealizadaPorUseCase } from '@/domain/application/use-cases/manutencao/find-manutencao-by-realizada-por-use-case';
 import { makeManutencao } from 'tests/factories/makeManutencao';
 import { makeUsuario } from 'tests/factories/makeUsuario';
 import { InMemoryComponenteRepository } from 'tests/repositories/in-memory-componente-repository';
