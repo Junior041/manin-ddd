@@ -35,9 +35,9 @@
 - [X] Atualização de Componente
 S
 ## Manutencao
-- [x] Criação de Manutencao
+- [X] Criação de Manutencao
 - [X] Busca de Manutencao por ID
-- [ ] Busca de Manutencao por ID do Componente
+- [X] Busca de Manutencao por ID do Componente
 - [X] Busca de Manutencao Próximas por ID do Componente
 - [X] Busca de Manutencao por ID do Componente em um Período
 - [X] Busca de Próximas Manutencao por ID da Máquina
