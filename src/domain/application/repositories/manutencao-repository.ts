@@ -1,5 +1,5 @@
 import { PaginationParams } from '@/core/repositories/pagination-params';
-import { Manutencao } from '@/domain/enterprise/entities/manutencao-repository';
+import { Manutencao } from '@/domain/enterprise/entities/manutencao-entity';
 
 export abstract class ManutencaoRepository {
     abstract create(data: Manutencao): Promise<void>

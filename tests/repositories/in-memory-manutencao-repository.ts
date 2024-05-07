@@ -1,6 +1,6 @@
 import { PaginationParams } from '@/core/repositories/pagination-params';
 import { ManutencaoRepository } from '@/domain/application/repositories/manutencao-repository';
-import { Manutencao } from '@/domain/enterprise/entities/manutencao-repository';
+import { Manutencao } from '@/domain/enterprise/entities/manutencao-entity';
 import { InMemoryComponenteRepository } from './in-memory-componente-repository';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 

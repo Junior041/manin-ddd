@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either';
-import { Manutencao } from '@/domain/enterprise/entities/manutencao-repository';
+import { Manutencao } from '@/domain/enterprise/entities/manutencao-entity';
 import { ManutencaoRepository } from '../../repositories/manutencao-repository';
 import { LojaRepository } from '../../repositories/loja-repository';
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error';
