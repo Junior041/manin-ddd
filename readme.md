@@ -41,6 +41,6 @@
 - [X] Busca de Manutencao Próximas por ID do Componente
 - [X] Busca de Manutencao por ID do Componente em um Período
 - [X] Busca de Próximas Manutencao por ID da Máquina
-- [ ] Definir Manutencao como Executada
+- [X] Definir Manutencao como Executada
 - [ ] Busca de Manutencao por ID da Máquina Executada
 - [X] Busca de Manutencao por Realizada Por
