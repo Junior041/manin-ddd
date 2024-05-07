@@ -36,6 +36,7 @@ export class InMemoryManutencaoRepository extends ManutencaoRepository{
 	async findByNearbyMaquinaId(maquinaId: string, {page}: PaginationParams): Promise<Manutencao[]> {
 		// Busca os componentes associados à máquina específica
 		const componentes = await this.componenteRepository.findAllByMaquinaId(maquinaId);
+		
 		// Obtém os IDs dos componentes
 		const componenteIds = componentes.map(componente => componente.id.toString());
 		// Filtra as manutenções relacionadas apenas aos componentes obtidos
