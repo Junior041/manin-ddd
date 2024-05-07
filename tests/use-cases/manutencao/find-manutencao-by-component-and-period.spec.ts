@@ -1,5 +1,6 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { FindManutencaoByComponenteAndPeriodoUseCase } from '@/domain/application/use-cases/manutencao/find-manutencao-by-component-and-period';
+import { FindManutencaoByComponenteAndPeriodoUseCase } from '@/domain/application/use-cases/manutencao/find-manutencao-by-component-and-period-use-case';
+
 import { makeManutencao } from 'tests/factories/makeManutencao';
 import { InMemoryComponenteRepository } from 'tests/repositories/in-memory-componente-repository';
 import { InMemoryManutencaoRepository } from 'tests/repositories/in-memory-manutencao-repository';

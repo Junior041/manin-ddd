@@ -1,5 +1,5 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
-import { FindNearbyManutencaoByComponenteUseCase } from '@/domain/application/use-cases/manutencao/find-nearby-manutencao-by-componente';
+import { FindNearbyManutencaoByComponenteUseCase } from '@/domain/application/use-cases/manutencao/find-nearby-manutencao-by-componente-use-case';
 import { makeManutencao } from 'tests/factories/makeManutencao';
 import { InMemoryComponenteRepository } from 'tests/repositories/in-memory-componente-repository';
 import { InMemoryManutencaoRepository } from 'tests/repositories/in-memory-manutencao-repository';

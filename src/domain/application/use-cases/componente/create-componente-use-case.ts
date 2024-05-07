@@ -35,7 +35,7 @@ export class CreateComponenteUseCase {
 		const componente = Componente.create({
 			descricao,
 			identificador,
-			maquinaId: maquina.id,
+			maquina: maquina,
 			nome,
 			valor,
 			valorUnitario
