@@ -43,4 +43,4 @@
 - [ ] Busca de Manutencao por ID da Máquina Próxima
 - [ ] Definir Manutencao como Executada
 - [ ] Busca de Manutencao por ID da Máquina Executada
-- [ ] Busca de Manutencao por Realizada Por
+- [X] Busca de Manutencao por Realizada Por
