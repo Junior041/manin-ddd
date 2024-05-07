@@ -20,7 +20,7 @@ export class InMemoryManutencaoRepository extends ManutencaoRepository{
 	}
 	async findBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
 		const manutencoes = this.items.filter((item) => item.componenteId.toString() === componenteId)
-			.slice((page - 1) * 20, page * 20);
+			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
 		return manutencoes;
 	}
 	async findNearbyBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {

@@ -36,7 +36,7 @@
 S
 ## Manutencao
 - [x] Criação de Manutencao
-- [ ] Busca de Manutencao por ID
+- [X] Busca de Manutencao por ID
 - [ ] Busca de Manutencao por ID do Componente
 - [X] Busca de Manutencao Próximas por ID do Componente
 - [X] Busca de Manutencao por ID do Componente em um Período
