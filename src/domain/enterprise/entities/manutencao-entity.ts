@@ -51,7 +51,7 @@ export class Manutencao extends Entity<ManutencaoProps> {
 		const manutencao = new Manutencao(
 			{
 				...props,
-				createdAt: new Date(),
+				createdAt:	props.createdAt ?? new Date(),
 			},
 			id
 		);

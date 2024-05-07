@@ -1,7 +1,7 @@
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Manutencao, ManutencaoProps } from '@/domain/enterprise/entities/manutencao-entity';
 
-export function makeEndereco(
+export function makeManutencao(
 	override: Partial<ManutencaoProps> = {},
 	id?: UniqueEntityID,
 ) {
@@ -13,6 +13,7 @@ export function makeEndereco(
 			lojaId: override.lojaId ?? new UniqueEntityID(),
 			realizadaPor: override.realizadaPor ?? null,
 			tipoManutencao: override.tipoManutencao ?? 'PREVENTIVA',
+			createdAt: override.createdAt ?? new Date(),
 			urgencia: override.urgencia ?? 1,
 			...override,
 		},
