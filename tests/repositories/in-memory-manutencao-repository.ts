@@ -18,17 +18,17 @@ export class InMemoryManutencaoRepository extends ManutencaoRepository{
 		const manutencao = this.items.find((item) => item.id.toString() === id);
 		return manutencao || null;
 	}
-	async findByComponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
+	async findBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
 		const manutencoes = this.items.filter((item) => item.compontentId.toString() === componenteId)
 			.slice((page - 1) * 20, page * 20);
 		return manutencoes;
 	}
-	async findNearbyByComponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
+	async findNearbyBycomponenteId(componenteId: string, {page}: PaginationParams): Promise<Manutencao[]> {
 		const manutencoes = this.items.filter((item) => item.compontentId.toString() === componenteId && item.dataManutencao >= new Date())
 			.slice((page - 1) * 20, page * 20).sort((a,b) => a.dataManutencao.getTime() - b.dataManutencao.getTime());
 		return manutencoes;
 	}
-	async findByComponenteIdPeriod(componenteId: string, startDate: Date, endDate: Date, {page}: PaginationParams): Promise<Manutencao[]> {
+	async findBycomponenteIdPeriod(componenteId: string, startDate: Date, endDate: Date, {page}: PaginationParams): Promise<Manutencao[]> {
 		const manutencoes = this.items.filter((item) => item.compontentId.toString() === componenteId && item.dataManutencao >= startDate && item.dataManutencao <= endDate)
 			.slice((page - 1) * 20, page * 20);
 		return manutencoes;

@@ -19,7 +19,7 @@ export class FindNearbyManutencaoByComponenteUseCase {
 	) {}
 
 	async execute({compontentId, params}: FindNearbyManutencaoByComponenteUseCaseRequest): Promise<FindNearbyManutencaoByComponenteUseCaseResponse> {
-		const manutencoes = await this.manutencaoRepository.findNearbyByComponenteId(compontentId, params);
+		const manutencoes = await this.manutencaoRepository.findNearbyBycomponenteId(compontentId, params);
 		return right({manutencoes});
 	}
 
